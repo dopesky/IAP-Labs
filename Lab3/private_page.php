@@ -17,7 +17,7 @@ if(isset($_POST['logout'])){
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>IAP Lab 2</title>
+	<title>IAP Lab 3</title>
 
 	<style type="text/css">
 
@@ -105,7 +105,7 @@ if(isset($_POST['logout'])){
 		<p>If you are looking to learn Codeigniter Framework, where the original format of this page was extracted, you should start by reading the <a href="https://codeigniter.com/user_guide/">User Guide</a>.</p>
 	</div>
 
-	<p class="footer">Created by 101538, BICS Year 3 Semester 1 Group B, IAP Lab 2</p>
+	<p class="footer">Created by 101538, BICS Year 3 Semester 1 Group B, IAP Lab 3</p>
 </div>
 <form method="post">
 	<input type="hidden" name="logout">

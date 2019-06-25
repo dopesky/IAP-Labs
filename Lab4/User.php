@@ -90,7 +90,14 @@ class User implements Crud,Authenticator{
 	}
 
 	public function getUserId(){
-		return $this->user_id;
+		if($this->user_id)
+			return $this->user_id;
+		$sql = 'SELECT * FROM `user` WHERE `username` = "'.$this->username.'"';
+		$res = mysqli_query($this->dbConn->conn, $sql) or die('ERROR: '.mysqli_error($this->dbConn->conn));
+		if($res->num_rows > 0){
+			return $res->fetch_assoc()['id'];
+		}
+		return false;
 	}
 
 	public function save(){
@@ -124,7 +131,7 @@ class User implements Crud,Authenticator{
 
 	public function readAll(){
 		$sql = "SELECT * from `user`";
-		$res = mysqli_query($this->dbConn->conn,$sql);
+		$res = mysqli_query($this->dbConn->conn,$sql) or die('ERROR: '.mysqli_error($this->dbConn->conn));
 		return $res->num_rows>0 ? $res:false;
 	}
 	public function readUnique(){
@@ -162,6 +169,14 @@ class User implements Crud,Authenticator{
 	}
 	public function createFormErrorSessions($data){
 		$_SESSION['form_errors'] = $data;
+	}
+
+	public function fetchUserAPIKey(){
+		$sql = "SELECT `api_key` FROM `api_keys` join `user` on `user`.`id` = `api_keys`.`user_id` WHERE `username` = '".strtolower($_SESSION['username'])."'";
+		$res = mysqli_query($this->dbConn->conn, $sql) or die('ERROR: '.mysqli_error($this->dbConn->conn));
+		if($res->num_rows < 1) return "";
+		$row = $res->fetch_assoc();
+		return $row['api_key'];
 	}
 }
 ?>

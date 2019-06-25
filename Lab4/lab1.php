@@ -32,7 +32,7 @@ $user->logout();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>IAP Lab 3</title>
+	<title>IAP Lab 4</title>
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -75,7 +75,7 @@ $user->logout();
 			<div class="row w-100 m-0">
 				<div class="col-sm-4 text-muted text-center">101538</div>
 				<div class="col-sm-4 text-muted text-center">BICS Year 3 Sem 1 Group B</div>
-				<div class="col-sm-4 text-muted text-center">IAP Lab 3</div>
+				<div class="col-sm-4 text-muted text-center">IAP Lab 4</div>
 			</div>
 		</header>
 		<header class="d-block d-md-none">
@@ -84,7 +84,7 @@ $user->logout();
 				<div class="d-flex justify-content-around">
 					<div class="text-muted text-center">101538</div>
 					<div class="text-muted text-center">BICS Y3 S1 GB</div>
-					<div class="text-muted text-center">IAP Lab 3</div>
+					<div class="text-muted text-center">IAP Lab 4</div>
 				</div>
 			</div>
 		</header>
