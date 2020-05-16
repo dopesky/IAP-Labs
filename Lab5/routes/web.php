@@ -11,6 +11,7 @@
 |
 */
 
+Route::redirect('/', '/cars');
 Route::get('/cars', 'CarsController@allcars');
 Route::get('/car/new', 'CarsController@newcarform');
 Route::post('/car', 'CarsController@newcar');
